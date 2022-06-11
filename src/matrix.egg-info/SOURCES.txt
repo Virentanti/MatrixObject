@@ -1,8 +1,0 @@
-LICENSE
-README.md
-setup.cfg
-setup.py
-src/matrix.egg-info/PKG-INFO
-src/matrix.egg-info/SOURCES.txt
-src/matrix.egg-info/dependency_links.txt
-src/matrix.egg-info/top_level.txt
