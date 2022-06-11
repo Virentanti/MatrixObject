@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='matrix',
+    name='matrix_object',
     version='0.1',
     license='MIT',
     author="Viren Tanti",
