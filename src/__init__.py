@@ -81,6 +81,12 @@ class matrix():
         for i in self.matrix:
             st= st+str(i)+"\n"
         return st
+        
+    def rows(self):
+        return self.order[0]
+
+    def cols(self):
+        return self.order[1]
 
     def minor(self,row,col):
 
@@ -108,6 +114,7 @@ class matrix():
             return result_matrix.determinant()
 
         else: raise Exception("minor method is only available on square matrix")
+
 
     def cofactor(self,row,col):
         
