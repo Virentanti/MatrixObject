@@ -19,9 +19,9 @@ Available methods
 -   `.inverse()`
 
 Available operators
--   +
--   -
--   *
+-   \+
+-   \-
+-   \*
 -   ==
   
 
