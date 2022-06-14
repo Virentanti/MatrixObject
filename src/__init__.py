@@ -1,7 +1,7 @@
-# import random
+import random
 
 class matrix():
-    def __init__(self, rows, cols,val):
+    def __init__(self, rows, cols,val,up=100,down=0):
 
         self.rows=rows
         self.cols=cols
@@ -13,9 +13,12 @@ class matrix():
             else:
                 raise Exception("This is only available for square matrix")
 
-        # elif val=="random" or val=="RANDOM": self.matrix=[ [random.randint(0,5) for i in range(self.cols)] for j in range(self.rows)]
+        elif val=="random" or val=="RANDOM": self.matrix=[ [random.randint(down,up) for i in range(self.cols)] for j in range(self.rows)]
 
         else: self.matrix=val
+
+        if self.order[0]==self.order[1]: self.dimension="square"
+        else: self.dimension="rectangle"
 
 
     def __add__(self,other):
@@ -75,6 +78,18 @@ class matrix():
             return True
         else: return False
 
+    def __neg__(self):
+        result=matrix(self.order[0],self.order[1],"null")
+        for i in range(self.order[0]):
+            for j in range(self.order[1]):
+                result[i+1,j+1]=-(self.matrix[i][j])
+            
+        return result
+
+    def __bool__(self):
+
+        return matrix(self.order[0],self.order[1],self.matrix).nullity()
+
 
     def __str__(self):
         st=""
@@ -115,6 +130,16 @@ class matrix():
 
         else: raise Exception("minor method is only available on square matrix")
 
+    def principal_diagonal(self):
+        if self.order[0]==self.order[1]:
+            pd=[]
+            for i in range(self.order[0]):
+                for j in range(self.order[1]):
+                    if i==j:
+                        pd.append(self.matrix[i][j])
+            return pd
+
+        else : raise Exception("method only available on square matrix")
 
     def cofactor(self,row,col):
         
@@ -124,7 +149,16 @@ class matrix():
 
         else: raise Exception("cofactor method is only available on square matrix")
 
+    def trace(self):
+        if self.order[0]==self.order[1]:
+            trace=0
+            for i in range(self.order[0]):
+                for j in range(self.order[1]):
+                    if i==j:
+                        trace+=self.matrix[i][j]
+            return trace
 
+        else : raise Exception("method only available on square matrix")
 
     def determinant(self):
         if self.order[0]==2 and self.order[1]==2 and self.order[0]==self.order[1]:
@@ -157,6 +191,15 @@ class matrix():
             for j in range(self.order[1]):
                 result[i+1,j+1]=temp.cofactor(i+1,j+1)
         return result.transpose()
+
+    def nullity(self):
+        # null=True
+
+        for i in range(self.order[0]):
+            for j in range(self.order[1]):
+                if self.matrix[i][j]!=0:
+                    return False
+        return True
 
     def inverse(self,precision=10):
         temp=matrix(self.order[0],self.order[1],self.matrix)
