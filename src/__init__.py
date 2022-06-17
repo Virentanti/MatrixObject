@@ -15,10 +15,18 @@ class matrix():
 
         elif val=="random" or val=="RANDOM": self.matrix=[ [random.randint(down,up) for i in range(self.cols)] for j in range(self.rows)]
 
+        elif val=="ltriangle" or val=="LTRIANGLE":  
+            if rows==cols:
+                self.matrix= [ [0 if i>j else random.randint(down,up) for i in range(self.cols) ] for j in range(self.rows)]
+            else: raise Exception("This is only available for square matrix")
+
+        elif val=="utriangle" or val=="UTRIANGLE":  
+            if rows==cols:
+                self.matrix= [ [0 if i<j else random.randint(down,up) for i in range(self.cols) ] for j in range(self.rows)]
+            else: raise Exception("This is only available for square matrix")
+
         else: self.matrix=val
 
-        if self.order[0]==self.order[1]: self.dimension="square"
-        else: self.dimension="rectangle"
 
 
     def __add__(self,other):
@@ -161,13 +169,22 @@ class matrix():
         else : raise Exception("method only available on square matrix")
 
     def determinant(self):
+
+        temp=matrix(self.order[0],self.order[1],self.matrix)
+
+        if temp.isltriangle() or temp.isutriangle():
+            x=temp.principal_diagonal()
+            res=1
+            for i in x:
+                res*=i
+            return res
+        
         if self.order[0]==2 and self.order[1]==2 and self.order[0]==self.order[1]:
  
             return self.matrix[0][0]*self.matrix[1][1] - self.matrix[0][1]*self.matrix[1][0]
 
         elif self.order[0]==self.order[1]:
 
-            temp=matrix(self.order[0],self.order[1],self.matrix)
             det=0
             for i in range(self.order[1]):
 
@@ -192,8 +209,29 @@ class matrix():
                 result[i+1,j+1]=temp.cofactor(i+1,j+1)
         return result.transpose()
 
+    def isutriangle(self):
+        if self.order[0]==self.order[1]:
+            for i in range(self.order[0]):
+                for j in range(self.order[1]):
+                    if i>j and self.matrix[i][j]!=0:
+                        return False
+
+            return True
+        
+        else: raise Exception("method only available on square matrix")
+
+    def isltriangle(self):
+        if self.order[0]==self.order[1]:
+            for i in range(self.order[0]):
+                for j in range(self.order[1]):
+                    if i<j and self.matrix[i][j]!=0:
+                        return False
+
+            return True
+        
+        else: raise Exception("method only available on square matrix")
+
     def nullity(self):
-        # null=True
 
         for i in range(self.order[0]):
             for j in range(self.order[1]):
@@ -210,4 +248,9 @@ class matrix():
             for j in range(self.order[1]):
                 result[i+1,j+1]=round(adj[i+1,j+1]/det,precision)
         return result
-        
+
+    def squareness(self):
+        if self.order[0]==self.order[1]:
+            return True
+        else: return False     
+
