@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='matrix_object',
-    version='0.1',
+    name='MatrixObject',
+    version='1.0.0',
     license='MIT',
     author="Viren Tanti",
     author_email='virentanti16@gmail.com',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    url='https://github.com/Virentanti/matrix',
-    keywords='matrix',
+    url='https://github.com/Virentanti/MatrixObject',
+    keywords=['matrix','MATRIX','matrix-object','matrix_object','matrixobject','MatrixObject'],
 
 
 )
