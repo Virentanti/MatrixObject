@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='MatrixObject',
+    name='pymatdet',
     version='1.0.0',
     license='MIT',
     author="Viren Tanti",
@@ -10,7 +10,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     url='https://github.com/Virentanti/MatrixObject',
-    keywords=['matrix','MATRIX','matrix-object','matrix_object','matrixobject','MatrixObject'],
+    keywords=['matrix','MATRIX','matrix-object','matrix_object','matrixobject','MatrixObject', 'mat', "determinant","det"],
 
 
 )
