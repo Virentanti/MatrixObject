@@ -139,3 +139,6 @@ otherwise returns false
 
 -   >bool(x)
     >returns true if x is not null
+
+## Contributions
+I am always super happy to have contributions: code, documentation, issues, feedback.
