@@ -4,7 +4,7 @@ This is a module to replicate matrix object to python and all its mathematical o
 
 ## Installation
 
->pip install matrix_object
+>pip install pymatdet
 
 ## Documentation
 
@@ -18,7 +18,7 @@ Available methods
 -   `.determinant()`
 -   `.transpose()`
 -   `.adjoint()`
--   `.inverse([presision])`
+-   `.inverse([precision])`
 -   `.isutriangle()`
 -   `.isltriangle()`
 -   `nullity()`
