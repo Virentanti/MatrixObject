@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: pymatdet
-Version: 1.0.3
+Version: 1.0.4
 Summary: This is a module which can be used for performing matrix operations
-Home-page: https://github.com/Virentanti/MatrixObject
+Home-page: https://github.com/Virentanti/pymatdet
 Author: Viren Tanti
 Author-email: virentanti16@gmail.com
 License: MIT
@@ -21,7 +21,7 @@ This is a module to replicate matrix object to python and all its mathematical o
 
 ## Installation
 
->pip install matrix_object
+>pip install pymatdet
 
 ## Documentation
 
@@ -35,7 +35,7 @@ Available methods
 -   `.determinant()`
 -   `.transpose()`
 -   `.adjoint()`
--   `.inverse([presision])`
+-   `.inverse([precision])`
 -   `.isutriangle()`
 -   `.isltriangle()`
 -   `nullity()`

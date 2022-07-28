@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 classifiers = [
   'Development Status :: 5 - Production/Stable',
@@ -11,17 +11,14 @@ classifiers = [
 
 setup(
     name='pymatdet',
-    version='1.0.3',
+    version='1.0.4',
     description="This is a module which can be used for performing matrix operations",
     license='MIT',
     author="Viren Tanti",
     author_email='virentanti16@gmail.com',
     classifiers=classifiers,
     packages=["pymatdet"],
-    # packages=find_packages('pymatdet',"pymatdet.*"),
-    # py_modules=['__init__'],
-    # package_dir={'': 'pymatdet'},
-    url='https://github.com/Virentanti/MatrixObject',
+    url='https://github.com/Virentanti/pymatdet',
     long_description_content_type="text/markdown",
     long_description=open('README.md').read(),
     keywords=['matrix','MATRIX','matrix-object','matrix_object','matrixobject','MatrixObject', 'mat', "determinant","det"],

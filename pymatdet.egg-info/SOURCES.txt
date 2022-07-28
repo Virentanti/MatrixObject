@@ -4,7 +4,6 @@ setup.cfg
 setup.py
 pymatdet/__init__.py
 pymatdet/main.py
-pymatdet/test.py
 pymatdet.egg-info/PKG-INFO
 pymatdet.egg-info/SOURCES.txt
 pymatdet.egg-info/dependency_links.txt
